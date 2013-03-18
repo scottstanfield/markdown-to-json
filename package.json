@@ -1,0 +1,16 @@
+{
+  "name": "markdown-to-yaml",
+  "version": "1.0.0",
+  "description": "emits yaml front matter from markdown files",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js test/*.md | diff - test/test.json "
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "commander": "~1.1.1",
+    "yaml-front-matter": "~1.0.3"
+  }
+}

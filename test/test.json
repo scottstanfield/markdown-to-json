@@ -1,0 +1,38 @@
+{
+  "files": [
+    {
+      "title": "Bellflower",
+      "author": "guy",
+      "date": "2012-07-23T00:00:00.000Z",
+      "template": "article.jade",
+      "tags": [
+        "tag3",
+        "tag4"
+      ],
+      "preview": "\n\nHow strange are those old recollections which h&hellip;",
+      "rfc822": "Sun, 22 Jul 2012 17:00:00 -0700"
+    },
+    {
+      "title": "The Fiddler",
+      "author": "herman",
+      "date": "2012-11-11T00:00:00.000Z",
+      "template": "article.jade",
+      "tags": "tag2, tag3",
+      "preview": "\n\nSo my poem is damned, and immortal fame is not &hellip;",
+      "rfc822": "Sat, 10 Nov 2012 16:00:00 -0800"
+    },
+    {
+      "title": "The Lottery Ticket",
+      "author": "anton",
+      "date": "2011-07-14 ",
+      "template": "article.jade",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ],
+      "preview": "\n\nIvan Dmitritch, a middle-class man who lived wi&hellip;",
+      "rfc822": "Thu, 14 Jul 2011 00:00:00 -0700"
+    }
+  ]
+}
