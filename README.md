@@ -24,7 +24,7 @@ Options:
 % m2j.js lottery.ms
 ```
 
-**lottery.ms**
+**lottery.md**
 
 ```
 ---
@@ -33,8 +33,8 @@ author: Anton C.
 date: "2013-03-15 15:00"
 template: article.jade
 tags:
-  - fiction
-  - russian
+  - Fiction
+  - Russian
   
 ---
 
