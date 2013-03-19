@@ -16,8 +16,8 @@ program
 String.prototype.truncate =
     function(n) {
 
-        //   ^\s+.{0,25}\s      tested at http://regexpal.com
-        var p  = new RegExp("^\\s+.{0," + n + "}\\s", 'g');
+        //   ^[\w\s]+.{0,25}\s      tested at http://regexpal.com
+        var p  = new RegExp("^[\\w\\s]+.{0," + n + "}\\s", 'g');
         var re = this.match(p);
         var l  = re[0].length;
 
