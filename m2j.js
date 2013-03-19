@@ -6,7 +6,7 @@ var program = require('commander'),
     yaml = require('yaml-front-matter');
 
 program
-    .version(require('../package.json').version)
+    .version(require('./package.json').version)
     .usage('[options] <files>')
     .option('-w --width <int>', 'max width of preview text [70]', Number, 70)
     .parse(process.argv);
