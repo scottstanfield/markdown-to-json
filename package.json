@@ -2,12 +2,13 @@
   "name": "markdown-to-yaml",
   "version": "1.0.0",
   "description": "emits yaml front matter from markdown files",
-  "main": "app.js",
+  "keywords": ["yaml", "markdown", "command line"],
+  "main": "m2j.js",
   "scripts": {
-    "test": "node app.js test/*.md | diff - test/test.json "
+    "test": "node m2j.js test/*.md | diff - test/test.json "
   },
   "repository": "",
-  "author": "",
+  "author": "Scott Stanfield <scott@vertigo.com>",
   "license": "BSD",
   "dependencies": {
     "commander": "~1.1.1",

@@ -3,13 +3,13 @@
 var program = require('commander'),
     yaml = require('yaml-front-matter');
 
-var log = console.log
 program
-    .version('1.0.0')
+    .version(require('../package.json').version)
     .usage('[options] <files>')
     .parse(process.argv);
 
-rfc822 = function(date) {
+// Convert date strings into RFC 822 formatted dates
+function rfc822(date) {
   var days, months, pad, time, tzoffset;
   pad = function(i) {
     if (i < 10) {
@@ -31,11 +31,11 @@ rfc822 = function(date) {
   return [days[date.getDay()] + ',', pad(date.getDate()), months[date.getMonth()], date.getFullYear(), time, tzoffset(date.getTimezoneOffset())].join(' ');
 };
 
+// Truncate a string and add a horizontal ellipses after n charcters
 String.prototype.trunc = 
-      function(n){
-          return this.substr(0,n-1)+(this.length>n?'&hellip;':'');
-      };
-
+    function(n){
+        return this.substr(0,n-1)+(this.length>n?'&hellip;':'');
+    };
 
 var json;
 json = { "files": [] }
@@ -51,5 +51,6 @@ program.args.forEach(function(filename) {
     }
 });
 
-log(JSON.stringify(json, undefined, 2));
+process.stdout.write(JSON.stringify(json, undefined, 2));
+process.stdout.write("\n");
 
