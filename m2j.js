@@ -1,53 +1,55 @@
 #!/usr/bin/env node
 
 var program = require('commander'),
+    moment = require('moment'),
+    path = require('path'),
     yaml = require('yaml-front-matter');
 
 program
     .version(require('../package.json').version)
     .usage('[options] <files>')
+    .option('-w --width <int>', 'max width of preview text [70]', Number, 70)
     .parse(process.argv);
 
-// Convert date strings into RFC 822 formatted dates
-function rfc822(date) {
-  var days, months, pad, time, tzoffset;
-  pad = function(i) {
-    if (i < 10) {
-      return '0' + i;
-    } else {
-      return i;
-    }
-  };
-  tzoffset = function(offset) {
-    var direction, hours, minutes;
-    hours = Math.floor(offset / 60);
-    minutes = Math.abs(offset % 60);
-    direction = hours > 0 ? '-' : '+';
-    return direction + pad(Math.abs(hours)) + pad(minutes);
-  };
-  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', ' Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  time = [pad(date.getHours()), pad(date.getMinutes()), pad(date.getSeconds())].join(':');
-  return [days[date.getDay()] + ',', pad(date.getDate()), months[date.getMonth()], date.getFullYear(), time, tzoffset(date.getTimezoneOffset())].join(' ');
-};
 
 // Truncate a string and add a horizontal ellipses after n charcters
-String.prototype.trunc = 
-    function(n){
-        return this.substr(0,n-1)+(this.length>n?'&hellip;':'');
+String.prototype.truncate =
+    function(n) {
+
+        //   ^\s+.{0,25}\s      tested at http://regexpal.com
+        var p  = new RegExp("^\\s+.{0," + n + "}\\s", 'g');
+        var re = this.match(p);
+        var l  = re[0].length;
+
+        if (l < this.length) 
+            return re + '…'; // or consider '&hellip;';
     };
 
-var json;
+// Side effects:
+// - Root node of JSON is files key mapping to a dictionary of files
+// - .preview will be first 50 characters of the raw content (not translated)
+// - .__content is removed (potentially too large)
+// - if .date is detected, a formated date is added as .dateFormatted
+
 json = { "files": [] }
 
 program.args.forEach(function(filename) {
-    var fileJson = yaml.loadFront(filename);
-    if (fileJson)
+    var metadata = yaml.loadFront(filename);
+    if (metadata)
     {
-        fileJson.preview = fileJson["__content"].trunc(50);
-        delete fileJson["__content"];
-        fileJson.rfc822 = rfc822(new Date(fileJson.date));
-        json.files.push(fileJson);
+        // Max of 50 chars, snapped to word boundaries, and trim leading whitespace
+        metadata.preview = metadata["__content"].truncate(program.width).replace(/^\s+/,'');
+
+        // yaml-front-matter adds all the content; we'll just use our preview
+        delete metadata["__content"];
+
+        // map user-entered date to a better one using moment's great parser
+        if (metadata.date) 
+            metadata.iso8601Date = moment(metadata.date).format();
+
+        metadata.basename = path.basename(filename);
+
+        json.files.push(metadata);
     }
 });
 

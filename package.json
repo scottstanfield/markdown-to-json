@@ -1,8 +1,12 @@
 {
   "name": "markdown-to-yaml",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "emits yaml front matter from markdown files",
-  "keywords": ["yaml", "markdown", "command line"],
+  "keywords": [
+    "yaml",
+    "markdown",
+    "command line"
+  ],
   "main": "m2j.js",
   "scripts": {
     "test": "node m2j.js test/*.md | diff - test/test.json "
@@ -12,6 +16,7 @@
   "license": "BSD",
   "dependencies": {
     "commander": "~1.1.1",
-    "yaml-front-matter": "~1.0.3"
+    "yaml-front-matter": "~1.0.3",
+    "moment": "~2.0.0"
   }
 }

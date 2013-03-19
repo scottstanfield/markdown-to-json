@@ -1,7 +1,7 @@
 ---
 title: The Fiddler
 author: herman
-date: 2012-11-11
+date: March 13 2013 1:00 pm
 template: article.jade
 tags: tag2, tag3
 ---

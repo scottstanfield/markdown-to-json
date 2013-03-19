@@ -1,12 +1,11 @@
 ---
 title: The Lottery Ticket
 author: anton
-date: "2011-07-14 "
+date: "1893-04-01"
 template: article.jade
 tags:
-  - tag1
-  - tag2
-  - tag3
+  - Fiction
+  - Russian
 ---
 
 Ivan Dmitritch, a middle-class man who lived with his family on an income of twelve hundred a year and was very well satisfied with his lot, sat down on the sofa after supper and began reading the newspaper. <span class="more"></span>
