@@ -9,7 +9,7 @@
   ],
   "main": "m2j.js",
   "scripts": {
-    "test": "node m2j.js test/*.md | diff - test/test.json "
+    "test": "node m2j.js -w 70 test/*.md | diff - test/test-70.json "
   },
   "repository": "",
   "author": "Scott Stanfield <scott@vertigo.com>",
