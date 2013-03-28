@@ -3,7 +3,9 @@ title: The Fiddler
 author: herman
 date: March 13 2013 1:00 pm
 template: article.jade
-tags: tag2, tag3
+tags: 
+  - crab
+  - violin
 ---
 
 So my poem is damned, and immortal fame is not for me! I am nobody forever and ever. Intolerable fate! <span class="more"></span>

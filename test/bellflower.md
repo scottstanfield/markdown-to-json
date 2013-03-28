@@ -3,9 +3,8 @@ title: Bellflower
 author: guy
 date: 2012-07-23
 template: article.jade
-tags: 
-  - tag3
-  - tag4
+tags: [crab, rose, bells]
+
 ---
 
 How strange are those old recollections which haunt us without our being able to get rid of them! This one is so very old that I cannot understand how it has clung so vividly and tenaciously to my memory. Since then I have seen so many sinister things, either affecting or terrible, that I am astonished at not being able to pass a single day without the face of Mother Bellflower recurring to my mind's eye, just as I knew her formerly long, long ago, when I was ten or twelve years old. <span class="more"></span>

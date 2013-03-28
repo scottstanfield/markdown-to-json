@@ -31,7 +31,8 @@ String.prototype.truncate =
 // - .__content is removed (potentially too large)
 // - if .date is detected, a formated date is added as .dateFormatted
 
-json = { "files": [] }
+// json = { "files": [] }
+var json = {};
 
 program.args.forEach(function(filename) {
     var metadata = yaml.loadFront(filename);
@@ -47,9 +48,14 @@ program.args.forEach(function(filename) {
         if (metadata.date) 
             metadata.iso8601Date = moment(metadata.date).format();
 
-        metadata.basename = path.basename(filename);
+        // Ex: articles/bellflower.md -> bellflower
+        var base = path.basename(filename, path.extname(filename));
+        metadata.basename = base;
 
-        json.files.push(metadata);
+        json[base] = {};
+        json[base] = metadata;
+
+       // json.files.push(metadata);
     }
 });
 
