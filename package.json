@@ -1,15 +1,14 @@
 {
   "name": "markdown-to-yaml",
-  "version": "2.0.0",
-  "description": "emits yaml front matter from markdown files",
-  "keywords": [
-    "yaml",
-    "markdown",
-    "command line"
-  ],
-  "main": "m2j.js",
+  "version": "3.0.0",
+  "description": "Emits YAML front matter from markdown files, as a single JSON object",
+  "keywords": [ "yaml", "markdown", "json", "command line" ],
+  "main": "./lib/m2j.js",
   "scripts": {
-    "test": "node m2j.js -w 70 test/*.md | diff - test/test-70.json "
+    "test": "node bin/m2j -p -w 70 test/*.md | diff - test/test-70.json "
+  },
+  "bin": {
+      "m2j": "./bin/m2j"
   },
   "repository": "",
   "author": "Scott Stanfield <scott@vertigo.com>",
