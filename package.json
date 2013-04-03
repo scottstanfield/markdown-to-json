@@ -1,7 +1,7 @@
 {
-  "name": "markdown-to-yaml",
-  "version": "3.0.0",
-  "description": "Emits YAML front matter from markdown files, as a single JSON object",
+  "name": "markdown-to-json",
+  "version": "3.0.1",
+  "description": "Extracts YAML front matter from markdown files, into a single JSON file.",
   "keywords": [ "yaml", "markdown", "json", "command line" ],
   "main": "./lib/m2j.js",
   "scripts": {
