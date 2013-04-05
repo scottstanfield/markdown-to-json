@@ -1,5 +1,7 @@
 var should = require('should');
 var glob = require('glob');
+var approvals = require('approvals').mocha(__dirname);
+
 
 describe('markdown-to-json', function() {
 
@@ -20,8 +22,7 @@ describe('markdown-to-json', function() {
     describe('pretty', function() {
         it('should parse bellflower.md with crlf', function() {
             var results = m2j.parse(['test/fixtures/bellflower.md'], options);
-            var json = fs.readFileSync('test/fixtures/output/bellflower-pretty-70.json', 'utf8').trim();
-            results.trim().should.equal(json);
+            this.verify(results);
         });
     });
 
