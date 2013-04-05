@@ -10,35 +10,20 @@ program
     .usage('[options] <files>')
     .option('-w --width <int>', 'max width of preview text [70]', Number, 70)
     .option('-p --pretty', 'format JSON with newlines')
-    .option('-s --save <filename>', 'filename to save json to [output.json]')
+    .option('-o --outfile <filename>', 'filename to save json to [output.json]')
     .parse(process.argv);
 
-// http://i.qkme.me/3tmyv8.jpg
-var parse_all_the_files = {};
+var options = {
+    pretty:    program.pretty,
+    width:     program.width,
+    outfile:   program.outfile
+}; 
 
 // If there's no list of files to process, print usage and quit immediately
 if (!program.args.length)
     program.help();
 
-program.args.forEach(function(filename) {
-        var m = m2j.processFile(filename, program.width);
-        parse_all_the_files[m.basename] = m.metadata;
-    }
-);
-
-var json;
-
-if (program.pretty)
-    json = JSON.stringify(parse_all_the_files, null, 2) + '\n';
-else
-    json = JSON.stringify(parse_all_the_files);
-
-if (program.save) {
-    var file = fs.openSync(program.save, 'w+');
-    fs.writeSync(file, json);
-    fs.closeSync(file);
-} else {
-    process.stdout.write(json);
-}
-
+var s = m2j.parse(program.args, options);
+if (s)
+    process.stdout.write(s);
 

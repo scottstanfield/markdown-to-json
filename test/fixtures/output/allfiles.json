@@ -1,0 +1,42 @@
+{
+  "bellflower": {
+    "title": "Bellflower",
+    "author": "guy",
+    "date": "2012-07-23T00:00:00.000Z",
+    "template": "article.jade",
+    "tags": [
+      "crab",
+      "rose",
+      "bells"
+    ],
+    "preview": "How strange are those old recollections which haunt us without our being able to get rid of them! This one is so very old that I cannot understand how it has clung so …",
+    "iso8601Date": "2012-07-22T17:00:00-07:00",
+    "basename": "bellflower"
+  },
+  "fiddler": {
+    "title": "The Fiddler",
+    "author": "herman",
+    "date": "March 13 2013 1:00 pm",
+    "template": "article.jade",
+    "tags": [
+      "crab",
+      "violin"
+    ],
+    "preview": "So my poem is damned, and immortal fame is not for me! I am nobody forever and ever. …",
+    "iso8601Date": "2013-03-13T13:00:00-07:00",
+    "basename": "fiddler"
+  },
+  "lottery": {
+    "title": "The Lottery Ticket",
+    "author": "anton",
+    "date": "1893-04-01",
+    "template": "article.jade",
+    "tags": [
+      "Fiction",
+      "Russian"
+    ],
+    "preview": "Ivan Dmitritch, a middle-class man who lived with his family on an income of twelve …",
+    "iso8601Date": "1893-04-01T00:00:00-07:00",
+    "basename": "lottery"
+  }
+}

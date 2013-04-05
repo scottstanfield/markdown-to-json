@@ -1,0 +1,15 @@
+{
+  "lottery": {
+    "title": "The Lottery Ticket",
+    "author": "anton",
+    "date": "1893-04-01",
+    "template": "article.jade",
+    "tags": [
+      "Fiction",
+      "Russian"
+    ],
+    "preview": "Ivan Dmitritch, a middle-class man who lived …",
+    "iso8601Date": "1893-04-01T00:00:00-07:00",
+    "basename": "lottery"
+  }
+}

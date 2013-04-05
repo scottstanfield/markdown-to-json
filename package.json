@@ -1,21 +1,23 @@
 {
   "name": "markdown-to-json",
-  "version": "3.0.1",
-  "description": "Extracts YAML front matter from markdown files, into a single JSON file.",
-  "keywords": [ "yaml", "markdown", "json", "command line" ],
+  "version": "0.3.0",
+  "description": "Extracts YAML front matter from markdown files to a single JSON string or file.",
+  "author": { "name": "Scott Stanfield", "email": "scott@vertigo.com" },
+  "keywords": [ "yaml", "markdown", "json" ],
   "main": "./lib/m2j.js",
-  "scripts": {
-    "test": "node bin/m2j -p -w 70 test/*.md | diff - test/test-70.json "
-  },
-  "bin": {
-      "m2j": "./bin/m2j"
-  },
-  "repository": "",
-  "author": "Scott Stanfield <scott@vertigo.com>",
+  "scripts": { "test": "make test" },
+  "bin": { "m2j": "./bin/m2j" },
+  "repository": "git://github.com/scottstanfield/markdown-to-json",
+  "engines": { "node": "*" },
   "license": "BSD",
   "dependencies": {
     "commander": "~1.1.1",
     "yaml-front-matter": "~1.0.3",
     "moment": "~2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "glob": "*"
   }
 }
