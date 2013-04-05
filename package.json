@@ -31,6 +31,8 @@
   "devDependencies": {
     "mocha": "*",
     "should": "*",
-    "glob": "*"
+    "glob": "*",
+    "approvals": "0.0.2",
+    "grunt": "~0.4.1"
   }
 }
