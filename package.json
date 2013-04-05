@@ -32,7 +32,6 @@
     "mocha": "*",
     "should": "*",
     "glob": "*",
-    "approvals": "0.0.2",
-    "grunt": "~0.4.1"
+    "approvals": "0.0.2"
   }
 }
