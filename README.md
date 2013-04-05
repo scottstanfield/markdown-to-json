@@ -2,6 +2,11 @@
 
 `m2j.js` is used to read a folder of Markdown files, pulling out the YAML front matter from each, and saving it all as a JSON object.
 
+This is especially useful if you have a folder full of Markdown files
+that you want scanned and processed into a singl JSON file, which can
+then be consumed by Angular on the client, cached in a Node server, or
+saved in a nosql database.
+
 In addition to moving the YAML to JSON, a few extra elements are created: 
 
 -  `iso8601` [formatted][1] from `date` using [Moment.js][2]
@@ -13,14 +18,17 @@ _Example_
 ```
 % m2.js --help
 
-Usage: m2j.js [options] <files>
+  Usage: m2j [options] <files>
 
-Options:
+  Options:
 
-  -h, --help        output usage information
-  -V, --version     output the version number
-  -w --width <int>  max width of preview text [70]
+    -h, --help               output usage information
+    -V, --version            output the version number
+    -w --width <int>         max width of preview text [70]
+    -p --pretty              format JSON with newlines
+    -o --outfile <filename>  filename to save json to [output.json]
     
+
 % m2j.js lottery.ms
 ```
 
