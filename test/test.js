@@ -25,6 +25,17 @@ describe('markdown-to-json', function() {
         });
     });
 
+    describe('on short strings', function() {
+        it('should return all the markdown content since it is smaller than width', function() {
+            var results = m2j.parse(['test/fixtures/short-content.md'], options);
+            var obj = JSON.parse(results);
+            obj.should.have.property('short-content');
+
+            var metadata = obj["short-content"];
+            metadata.should.have.property('preview', 'This would make a great article.\n');
+        });
+    });
+
     describe('no yaml', function() {
         it('should return empty object on file with no yaml to parse', function() {
             options.minify = true;
@@ -42,6 +53,7 @@ describe('markdown-to-json', function() {
         });
     });
 
+    /*
     describe('all files', function() {
         it('should parse all files', function() {
             glob('test/fixtures/*.md', function(er, files) {
@@ -51,6 +63,7 @@ describe('markdown-to-json', function() {
             });
         });
     });
+    */
 
     describe('with 30 character width', function() {
         it('should parse lottery with preview max at 30', function() {
