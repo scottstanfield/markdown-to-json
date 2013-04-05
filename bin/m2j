@@ -9,12 +9,12 @@ program
     .version(require('../package.json').version)
     .usage('[options] <files>')
     .option('-w --width <int>', 'max width of preview text [70]', Number, 70)
-    .option('-p --pretty', 'format JSON with newlines')
+    .option('-m --minify', 'format JSON without newlines')
     .option('-o --outfile <filename>', 'filename to save json to [output.json]')
     .parse(process.argv);
 
 var options = {
-    pretty:    program.pretty,
+    minify:    program.minify,
     width:     program.width,
     outfile:   program.outfile
 }; 

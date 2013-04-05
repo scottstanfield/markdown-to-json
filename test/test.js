@@ -10,7 +10,7 @@ describe('markdown-to-json', function() {
 
     beforeEach(function() {
         options = {
-            pretty: true,
+            minify: false,
             width: 70,
             outfile: null
         };
@@ -18,16 +18,24 @@ describe('markdown-to-json', function() {
     });
 
     describe('pretty', function() {
-        it('should parse bellflower.md', function() {
+        it('should parse bellflower.md with crlf', function() {
             var results = m2j.parse(['test/fixtures/bellflower.md'], options);
             var json = fs.readFileSync('test/fixtures/output/bellflower-pretty-70.json', 'utf8').trim();
             results.trim().should.equal(json);
         });
     });
 
-    describe('not pretty', function() {
-        it('should parse bellflower.md without pretty flag', function() {
-            options.pretty = false;
+    describe('no yaml', function() {
+        it('should return empty object on file with no yaml to parse', function() {
+            options.minify = true;
+            var results = m2j.parse(['test/fixtures/no-yaml.md'], options);
+            should.exist('{}');
+        });
+    });
+
+    describe('minify', function() {
+        it('should parse bellflower.md without newlines', function() {
+            options.minify = true;
             var results = m2j.parse(['test/fixtures/bellflower.md'], options);
             var json = fs.readFileSync('test/fixtures/output/bellflower-nopretty-70.json', 'utf8').trim();
             results.trim().should.equal(json);
