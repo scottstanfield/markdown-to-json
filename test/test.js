@@ -32,7 +32,7 @@ describe('markdown-to-json', function() {
             obj.should.have.property('short-content');
 
             var metadata = obj["short-content"];
-            metadata.should.have.property('preview', 'This would make a great article.\n');
+            metadata.should.have.property('preview', 'This would make a great article.');
         });
     });
 
@@ -53,7 +53,6 @@ describe('markdown-to-json', function() {
         });
     });
 
-    /*
     describe('all files', function() {
         it('should parse all files', function() {
             glob('test/fixtures/*.md', function(er, files) {
@@ -63,7 +62,6 @@ describe('markdown-to-json', function() {
             });
         });
     });
-    */
 
     describe('with 30 character width', function() {
         it('should parse lottery with preview max at 30', function() {

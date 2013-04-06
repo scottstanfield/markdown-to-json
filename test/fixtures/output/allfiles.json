@@ -9,7 +9,7 @@
       "rose",
       "bells"
     ],
-    "preview": "How strange are those old recollections which haunt us without our being able to get rid of them! This one is so very old that I cannot understand how it has clung so …",
+    "preview": "How strange are those old recollections which haunt us without our …",
     "iso8601Date": "2012-07-22T17:00:00-07:00",
     "basename": "bellflower"
   },
@@ -22,7 +22,7 @@
       "crab",
       "violin"
     ],
-    "preview": "So my poem is damned, and immortal fame is not for me! I am nobody forever and ever. …",
+    "preview": "So my poem is damned, and immortal fame is not for me! I am nobody …",
     "iso8601Date": "2013-03-13T13:00:00-07:00",
     "basename": "fiddler"
   },
@@ -35,8 +35,15 @@
       "Fiction",
       "Russian"
     ],
-    "preview": "Ivan Dmitritch, a middle-class man who lived with his family on an income of twelve …",
+    "preview": "Ivan Dmitritch, a middle-class man who lived with his family on an …",
     "iso8601Date": "1893-04-01T00:00:00-07:00",
     "basename": "lottery"
+  },
+  "short-content": {
+    "title": "Short Content",
+    "tags": "foo bar",
+    "author": "scott",
+    "preview": "This would make a great article.",
+    "basename": "short-content"
   }
 }
