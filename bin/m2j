@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // vi: ft=javascript
+/* global process:false */
 
 var program = require('commander'),
-    fs = require('fs'),
     m2j = require('..');        // looks for "main" in ../package.json
 
 program
@@ -17,13 +17,15 @@ var options = {
     minify:    program.minify,
     width:     program.width,
     outfile:   program.outfile
-}; 
+};
 
 // If there's no list of files to process, print usage and quit immediately
-if (!program.args.length)
+if (!program.args.length) {
     program.help();
+}
 
 var s = m2j.parse(program.args, options);
-if (s)
+if (s) {
     process.stdout.write(s);
+}
 
