@@ -11,7 +11,7 @@ program
     .option('-w --width <int>', 'max width of preview text [70]', Number, 70)
     .option('-m --minify', 'format JSON without newlines')
 	.option('-c --content', 'include full content')
-    .option('-o --outfile <filename>', 'filename to save json to [output.json]')
+	.option('-o --outfile <filename>', 'filename to save json to [output.json]')
     .parse(process.argv);
 
 var options = {
