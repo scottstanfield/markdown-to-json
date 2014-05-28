@@ -18,7 +18,7 @@ var options = {
     minify:    program.minify,
     width:     program.width,
     outfile:   program.outfile,
-	content:   program.content
+    content:   program.content
 };
 
 // If there's no list of files to process, print usage and quit immediately
