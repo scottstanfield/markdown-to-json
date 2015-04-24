@@ -24,7 +24,7 @@ _Example_
 
     -h, --help               output usage information
     -V, --version            output the version number
-    -w --width <int>         max width of preview text [70]
+    -w --width <int>         max width of preview text [70]. Set to 0 for no preview.
     -p --pretty              format JSON with newlines
     -o --outfile <filename>  filename to save json to [output.json]
     
