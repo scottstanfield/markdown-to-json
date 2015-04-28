@@ -8,7 +8,7 @@ var program = require('commander'),
 program
     .version(require('../package.json').version)
     .usage('[options] <files>')
-    .option('-w --width <int>', 'max width of preview text [70]', Number, 70)
+    .option('-w --width <int>', 'max width of preview text [70]. Set to 0 for no preview', Number, 70)
     .option('-m --minify', 'format JSON without newlines')
     .option('-c --content', 'include full content')
     .option('-o --outfile <filename>', 'filename to save json to [output.json]')
