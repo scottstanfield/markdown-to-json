@@ -34,7 +34,7 @@ _Example_
 
 **lottery.md**
 
-```
+```md
 ---
 title: The Lottery Ticket
 author: Anton C.
@@ -52,7 +52,7 @@ Ivan Dmitritch, a middle-class man who lived with his family on an income of twe
 
 **output**
 
-```
+```js
 {
   "files": [
     {
