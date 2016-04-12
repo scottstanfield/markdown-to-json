@@ -12,6 +12,7 @@ In addition to moving the YAML to JSON, a few extra elements are created:
 -  `iso8601` [formatted][1] from `date` using [Moment.js][2]
 -  `preview` is first 70 or so characters of the actual raw markdown content, with ellipses at the end
 -  `basename` is the filename without the path or extension
+-  `content` is created only if the content flag is enabled, and will include raw markdown content unabridged
 
 _Example_
 
@@ -26,6 +27,7 @@ _Example_
     -V, --version            output the version number
     -w --width <int>         max width of preview text [70]. Set to 0 for no preview.
     -p --pretty              format JSON with newlines
+    -c --content             include the full content of the file unabridged
     -o --outfile <filename>  filename to save json to [output.json]
     
 
