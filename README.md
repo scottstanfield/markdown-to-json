@@ -31,7 +31,7 @@ _Example_
     -o --outfile <filename>  filename to save json to [output.json]
     
 
-% m2j.js lottery.ms
+% m2j.js lottery.md
 ```
 
 **lottery.md**
