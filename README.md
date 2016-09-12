@@ -1,23 +1,26 @@
-# Markdown YAML front-matter to JSON
+# markdown-to-json
 
-`m2j.js` is used to read a folder of Markdown files, pulling out the YAML front matter from each, and saving it all as a JSON object.
+Tool for converting YAML Front Matter in Markdown files to JSON files.
+
+`m2j` is used to read a folder of Markdown files, pulling out the YAML
+Front Matter from each, and saving it all as a JSON blob.
 
 This is especially useful if you have a folder full of Markdown files
 that you want scanned and processed into a single JSON file, which can
 then be consumed by Angular on the client, cached in a Node server, or
-saved in a nosql database.
+saved in a NoSQL database.
 
 In addition to moving the YAML to JSON, a few extra elements are created: 
 
--  `iso8601` [formatted][1] from `date` using [Moment.js][2]
--  `preview` is first 70 or so characters of the actual raw markdown content, with ellipses at the end
+-  `iso8601` [formatted][1] timestamp from `date` using [Moment.js][2]
+-  `preview` is the first 70 or so characters of the actual raw Markdown content, with ellipses at the end
 -  `basename` is the filename without the path or extension
--  `content` is created only if the content flag is enabled, and will include raw markdown content unabridged
+-  `content` is created only if the content flag is enabled; raw Markdown content will be unabridged
 
 _Example_
 
 ```
-% m2.js --help
+% m2j --help
 
   Usage: m2j [options] <files>
 
@@ -29,7 +32,7 @@ _Example_
     -p --pretty              format JSON with newlines
     -c --content             include the full content of the file unabridged
     -o --outfile <filename>  filename to save json to [output.json]
-    
+
 
 % m2j.js lottery.md
 ```
@@ -45,7 +48,7 @@ template: article.jade
 tags:
   - Fiction
   - Russian
-  
+
 ---
 
 Ivan Dmitritch, a middle-class man who lived with his family on an income of twelve hundred a year and was very well satisfied with his lot, sat down on the sofa after supper and began reading the newspaper. 
@@ -75,5 +78,5 @@ Ivan Dmitritch, a middle-class man who lived with his family on an income of twe
 ```
 
 
-[1]: http://en.wikipedia.org/wiki/ISO_8601
+[1]: https://en.wikipedia.org/wiki/ISO_8601
 [2]: http://momentjs.com/docs/#/parsing/string/
