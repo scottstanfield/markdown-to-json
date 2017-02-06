@@ -13,7 +13,7 @@
   ],
   "main": "./lib/m2j.js",
   "scripts": {
-    "test": "make test"
+    "test": "TZ='America/Tijuana' mocha -u bdd"
   },
   "bin": {
     "m2j": "./bin/m2j"
