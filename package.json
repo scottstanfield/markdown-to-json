@@ -27,7 +27,7 @@
     "commander": "^2.9.0",
     "lodash.truncate": "^4.4.2",
     "moment": "~2.0.0",
-    "yaml-front-matter": "~1.0.3"
+    "yaml-front-matter": "^3.4.0"
   },
   "devDependencies": {
     "glob": "*",
