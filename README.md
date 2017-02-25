@@ -1,5 +1,7 @@
 # markdown-to-json
 
+[![Build Status](https://travis-ci.org/scottstanfield/markdown-to-json.svg?branch=master)](https://travis-ci.org/scottstanfield/markdown-to-json)
+
 Tool for converting YAML Front Matter in Markdown files to JSON files.
 
 `m2j` is used to read a folder of Markdown files, pulling out the YAML
