@@ -1,7 +1,7 @@
 ---
 title: The Fiddler
 author: herman
-date: March 13 2013 1:00 pm
+date: 2013-03-13 13:00
 template: article.jade
 tags: 
   - crab
