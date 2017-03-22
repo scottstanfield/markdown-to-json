@@ -1,15 +1,17 @@
 {
   "name": "markdown-to-json",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Extracts YAML front matter from markdown files to a single JSON string or file.",
   "author": {
     "name": "Scott Stanfield",
     "email": "scottstanfield@gmail.com"
   },
-  "contributors": [{
-    "name": "Capi Etheriel",
-    "email": "barraponto@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "Capi Etheriel",
+      "email": "barraponto@gmail.com"
+    }
+  ],
   "keywords": [
     "yaml",
     "markdown",
