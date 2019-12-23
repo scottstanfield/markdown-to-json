@@ -19,7 +19,8 @@
   ],
   "main": "./lib/m2j.js",
   "scripts": {
-    "test": "TZ='America/Tijuana' mocha -u bdd"
+    "test": "TZ='America/Los_Angeles' mocha",
+    "lint": "eslint 'bin/*' 'lib/**/*.js'"
   },
   "bin": {
     "m2j": "./bin/m2j"

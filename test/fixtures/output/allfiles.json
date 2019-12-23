@@ -16,7 +16,7 @@
   "fiddler": {
     "title": "The Fiddler",
     "author": "herman",
-    "date": "March 13 2013 1:00 pm",
+    "date": "2013-03-13 13:00",
     "template": "article.jade",
     "tags": [
       "crab",
@@ -36,8 +36,12 @@
       "Russian"
     ],
     "preview": "Ivan Dmitritch, a middle-class man who lived with his family on an …",
-    "iso8601Date": "1893-04-01T00:00:00-07:00",
+    "iso8601Date": "1893-04-01T00:00:00-08:00",
     "basename": "lottery"
+  },
+  "no-yaml": {
+    "preview": "Ivan Dmitritch, a middle-class man who lived with his family on an …",
+    "basename": "no-yaml"
   },
   "short-content": {
     "title": "Short Content",
