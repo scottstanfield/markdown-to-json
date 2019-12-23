@@ -20,7 +20,7 @@
   "main": "./lib/m2j.js",
   "scripts": {
     "test": "TZ='America/Los_Angeles' mocha",
-    "lint": "eslint 'bin/*' 'lib/**/*.js'"
+    "lint": "eslint 'bin/*' 'lib/**/*.js' 'test/*.js'"
   },
   "bin": {
     "m2j": "./bin/m2j"

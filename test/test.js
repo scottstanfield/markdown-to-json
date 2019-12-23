@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: "off" */
 const should = require('should');
 const glob = require('glob');
 
@@ -5,7 +6,6 @@ describe('markdown-to-json', function() {
   const m2j = require('../lib/m2j.js');
   const fs = require('fs');
   let options;
-  let results;
 
   beforeEach(function() {
     options = {
@@ -13,7 +13,6 @@ describe('markdown-to-json', function() {
       width: 70,
       outfile: null,
     };
-    results = null;
   });
 
   describe('pretty', function() {
@@ -39,7 +38,12 @@ describe('markdown-to-json', function() {
     it('should return empty object on file with no yaml to parse', function() {
       options.minify = true;
       const results = m2j.parse(['test/fixtures/no-yaml.md'], options);
-      should.exist('{}');
+      JSON.parse(results).should.have.property('no-yaml');
+
+      const obj = JSON.parse(results)['no-yaml'];
+
+      obj.should.have.property('preview');
+      obj.should.have.property('basename');
     });
   });
 
