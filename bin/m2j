@@ -1,18 +1,17 @@
 #!/usr/bin/env node
 // vi: ft=javascript
-/* global process:false */
 /* eslint-env node */
 'use strict';
 
 const program = require('commander');
-const m2j = require('..');        // looks for "main" in ../package.json
+const m2j = require('..'); // looks for "main" in ../package.json
 
 program
     .version(require('../package.json').version)
     .usage('[options] <files>')
     .option('-w --width <int>',
-            'max width of preview text [70]. Set to 0 for no preview',
-            Number, 70)
+        'max width of preview text [70]. Set to 0 for no preview',
+        Number, 70)
     .option('-m --minify', 'format JSON without newlines')
     .option('-c --content', 'include full content')
     .option('-o --outfile <filename>', 'filename to save json to [output.json]')
@@ -27,10 +26,10 @@ const options = {
 
 // If there's no list of files to process, print usage and quit immediately
 if (!program.args.length) {
-    program.help();
+  program.help();
 }
 
 const output = m2j.parse(program.args, options);
 if (output) {
-    process.stdout.write(output);
+  process.stdout.write(output);
 }
