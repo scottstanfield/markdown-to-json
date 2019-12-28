@@ -4,6 +4,9 @@
 'use strict';
 
 const program = require('commander');
+const R = require('ramda');
+const fs = require('fs');
+
 const m2j = require('..'); // looks for "main" in ../package.json
 
 program
@@ -28,6 +31,58 @@ const options = {
 if (!program.args.length) {
   program.help();
 }
+
+
+program.args = ["error", "test/fixtures/bellflower.md", "test"]
+
+const classifyDirectory = R.curry((suffix, path) => fs.lstatSync(path).isDirectory() ? `${path}${suffix}` : path );
+
+const safeExists = (arg) => {
+  try {
+    fs.lstatSync(arg);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+// Pipeline, filter, map, currying
+
+const clog = R.curry((phrase, val) => console.log(`${phrase || 'clog'}`, val));
+
+const allFileNames = R.pipe(
+  R.filter(safeExists),
+  // R.tap(console.log),
+  R.tap(clog('so far so good:')),
+  R.map(classifyDirectory('/')),
+)(program.args);
+
+console.log('done', allFileNames);
+
+
+process.exit(5);
+
+// with Ben
+const getFiles = function(filename) {
+  if (fs.lstatSync(filename).isDirectory()) {
+    return fs.readdirSync(filename).filter((entry) => !entry.isDirectory);
+  } else {
+    return [filename];
+  }
+};
+
+const parseAllTheFiles = {};
+
+const files = filenames
+    .map(getFiles)
+    .reduce((collection, filenames) => collection.concat(filenames), []);
+
+files
+    .map((file) => processFile(file, options.width, options.content))
+    .forEach((data) => {
+      parseAllTheFiles[data.basename] = data.metadata;
+    });
+
 
 const output = m2j.parse(program.args, options);
 if (output) {
