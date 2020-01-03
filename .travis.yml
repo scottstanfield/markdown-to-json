@@ -6,6 +6,5 @@ os:
 node_js:
     - node
     - lts/*
-    - 8
     - 10
     - 12
