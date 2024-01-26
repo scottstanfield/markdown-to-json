@@ -84,4 +84,15 @@ describe('markdown-to-json', function() {
       results.trim().should.equal(json);
     });
   });
+
+  describe('with fullpath enabled', function() {
+    it('should return valid json with reference to the full pathname', function() {
+      options.width = 0;
+      options.content = true;
+      options.fullpath = true;
+      const results = m2j.parse(['test/fixtures/bellflower.md'], options);
+      const json = JSON.parse(results.trim());
+      json[Object.keys(json)[0]].fullpath.should.equal('test/fixtures/bellflower.md');
+    });
+  });
 });
