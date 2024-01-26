@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: "off" */
 const should = require('should');
-const glob = require('glob');
+const {glob} = require('glob');
 
 describe('markdown-to-json', function() {
   const m2j = require('../lib/m2j.js');
