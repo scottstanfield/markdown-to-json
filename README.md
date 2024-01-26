@@ -1,6 +1,6 @@
 # markdown-to-json
 
-https://img.shields.io/github/v/release/scottstanfield/markdown-to-json
+![](https://img.shields.io/github/v/release/scottstanfield/markdown-to-json)
 
 Tool for converting YAML Front Matter in Markdown files to JSON files.
 
