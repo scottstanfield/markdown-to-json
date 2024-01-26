@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: "off" */
 const should = require('should');
-const glob = require('glob');
+const {glob} = require('glob');
 
 describe('markdown-to-json', function() {
   const m2j = require('../lib/m2j.js');
@@ -82,6 +82,17 @@ describe('markdown-to-json', function() {
       const results = m2j.parse(['test/fixtures/bellflower.md'], options);
       const json = fs.readFileSync('test/fixtures/output/bellflower-content.json', 'utf8').trim();
       results.trim().should.equal(json);
+    });
+  });
+
+  describe('with fullpath enabled', function() {
+    it('should return valid json with reference to the full pathname', function() {
+      options.width = 0;
+      options.content = true;
+      options.fullpath = true;
+      const results = m2j.parse(['test/fixtures/bellflower.md'], options);
+      const json = JSON.parse(results.trim());
+      json[Object.keys(json)[0]].fullpath.should.equal('test/fixtures/bellflower.md');
     });
   });
 });
